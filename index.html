@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="theme-color" content="#f7f4ed">
+<title>Entre notas · Cartas sonoras</title><meta name="description" content="Componha uma frase de até oito notas. Envie a alguém, receba uma resposta e descubra a forma do seu dueto.">
+<meta property="og:title" content="Entre notas · Uma carta sonora"><meta property="og:description" content="Uma pessoa toca o começo. A outra completa. Abra a partitura e ouça o dueto."><meta property="og:image" content="https://mauroelbr-crypto.github.io/entre-notas-cartas-sonoras/capa.png"><meta property="og:image:alt" content="Entre notas, uma carta musical em duas vozes"><meta name="twitter:card" content="summary_large_image"><link rel="canonical" href="https://mauroelbr-crypto.github.io/entre-notas-cartas-sonoras/"><link rel="icon" href="icon.png"><link rel="stylesheet" href="style.css">
+<script defer src="art.js"></script><script defer src="audio.js"></script><script defer src="app.js"></script>
+</head><body>
+<header class="mast"><a href="./" class="brand" aria-label="Entre notas, início"><span class="brandmark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>entre notas</a><button id="help" class="help">Como funciona <span aria-hidden="true">?</span></button></header>
+<main>
+<section class="hero" aria-label="Uma carta sonora">
+<div class="opening"><div class="category"><i></i> ATELIÊ DE CARTAS SONORAS</div>
+<h1 id="title">Um dueto<br><em>por carta.</em></h1>
+<p id="intro">Toque uma frase e convide alguém para responder. Juntas, as duas melodias ganham uma forma que você pode girar.</p>
+<button id="listen" class="listen"><span id="playglyph" aria-hidden="true">▶</span><span id="playlabel">Ouvir exemplo</span></button></div>
+<figure class="cover"><div class="sleeve"><div class="cover-top"><span id="coverName">Dueto de exemplo</span><span class="stereo" aria-hidden="true">◧ ◨</span></div><canvas id="art" aria-label="Partitura tridimensional das duas vozes" role="img"></canvas><div class="cover-bottom"><span>Entre notas</span><span>Partitura dupla</span></div></div>
+<figcaption><label for="angle">Girar a partitura</label><input id="angle" type="range" min="0" max="90" value="38" aria-label="Girar entre a primeira e a segunda voz"><output id="angleText" for="angle">38°</output></figcaption></figure>
+</section>
+<section class="composer" aria-labelledby="composeTitle"><div class="composer-head"><div><h2 id="composeTitle">Componha sua frase</h2><p id="editHint">Use as teclas de 1 a 6 ou toque nos blocos.</p></div><div class="voice-tabs" aria-label="Escolha a voz"><button data-voice="call" aria-pressed="true">1ª voz</button><button data-voice="reply" aria-pressed="false">Resposta</button></div></div>
+<div id="pads" class="pads" aria-label="Notas musicais"></div>
+<div class="sequence"><span id="seqLabel">Sua frase</span><ol id="slots" aria-label="Sequência de notas"></ol><span id="count">0 / 8</span><button id="undo" class="icon" aria-label="Desfazer última nota" title="Desfazer última nota" disabled>↶</button></div>
+<p class="seqTip">Toque numa nota da sequência para dobrar sua duração.</p><div class="actions"><button id="send" class="primary" disabled>Convidar alguém <b aria-hidden="true">↗</b></button><button id="export" class="quiet" disabled>Baixar áudio <span aria-hidden="true">↓</span></button><button id="reset" class="quiet reset" disabled>Recomeçar</button></div>
+<p id="status" class="status" role="status" aria-live="polite"></p></section>
+</main><footer class="foot"><span>Entre notas</span><span>Som e imagem criados no seu navegador.</span></footer>
+<dialog id="modal"><div class="modalInner"><button id="close" class="close" aria-label="Fechar">×</button><h2 id="dialogTitle"></h2><p id="dialogBody"></p><div id="shareArea"><label for="link">Link da carta</label><input id="link" readonly><div class="modalActions"><button id="copy" class="primary">Copiar link</button><button id="saveArt" class="quiet">Salvar capa</button></div><p id="copyStatus" role="status"></p></div><div id="helpArea"><p>Gire a partitura para ver o contorno de cada voz. Ao ouvir o encontro das duas, o controle também muda o balanço entre elas.</p><p>Para devolver sua resposta, envie o novo link a quem começou. Você também pode compor as duas partes.</p></div><button id="confirmReset" class="primary">Começar nova carta</button></div></dialog>
+</body></html>
